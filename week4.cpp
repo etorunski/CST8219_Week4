@@ -2,40 +2,42 @@
 //
 
 #include <iostream>
+#include "Fraction.h"
 
 using namespace std;
 
-class Fraction {
-	int numerator, denominator;
 
-public: 
-	Fraction(int n, int d) {
-		setNumerator(n);
-		setDenominator(d);
-	}
-
-	void setNumerator(int n){ numerator = n;	}
-	int getNumerator(void) {  return numerator;  }
-
-	void setDenominator(int d) { denominator = d; }
-	int getDenominator(void) { return denominator; }
-
-	float asFloat(void) {
-		return (float)getNumerator() / getDenominator();
-	}
-};
-
-void printFraction(Fraction f)
+void printFraction(Fraction &f) //copy by reference (pointer)
 {
 	cout << "Fraction at address:" << &f
 		<< " Numerator:" << f.getNumerator()
 		<< " Denominator:" << f.getDenominator() << endl;
 }
 
+
+void funct(int a , bool b, int c = 5, int d = 10)
+{
+}
+
 int main()
 {
+
+	Fraction f1 = Fraction( );
+
+
 	Fraction f(5, 1);
+
+
+
+	Fraction refObject(f); //copy by reference
+	Fraction pointObject(&f); //copy by pointer
+
 	printFraction(f);
 
-	return 0;
+	return 0; 
+	//call destructor of f
 }
+
+
+
+
