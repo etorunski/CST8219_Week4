@@ -6,6 +6,6 @@ cmake_minimum_required (VERSION 3.1)
 project ("week4")
 
 # Add source to this project's executable.
-add_executable (week4 "week4.cpp" "Fraction.h" "Fraction.cpp" "week4.h")
+add_executable (week4 "week4.cpp")
 
 # TODO: Add tests and install targets if needed.
